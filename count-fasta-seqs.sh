@@ -63,7 +63,6 @@
 # files that were 'given to' this script. The variable "$@" will be very useful
 # for this. Let's take a look at what it gives us:
 
-echo "$@"
 
 # How are you going to work with each file path?
 # HINT: for loop (remember "for do done"?)
@@ -75,8 +74,8 @@ echo "$@"
 # To count the number of sequences in each file, I recommend you checkout
 # 'grep' and 'wc':
 #
-#   $ man grep 
-#   $ man wc 
+#   $ man grep
+#   $ man wc
 #
 # WARNING about 'grep': ALWAYS quote the string that you are trying to find!
 # For example, do:
@@ -88,9 +87,20 @@ echo "$@"
 # To keep a tally of the total number of sequences across all files, 'expr'
 # might be useful:
 #
-#   $ man expr 
+#   $ man expr
 #
 # Good luck!
 #
 # ADD YOUR CODE BELOW:
+
+sum=0
+for name in "$@"
+do
+filen=`basename $name`
+a=`grep ">" $name | wc -l`
+b=`echo $filen`
+sum=`expr $sum + $a`
+echo $a $b
+done
+echo $sum
 
