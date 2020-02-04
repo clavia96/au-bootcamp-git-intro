@@ -92,12 +92,13 @@
 # Good luck!
 #
 # ADD YOUR CODE BELOW:
-PATH=/home/USER/au-bootcamp-git-intro/"$@"
-
-#for "$@" in $PATH
+file=example-seqs*.fasta
+PATH=/home/$USER/au-bootcamp-git-intro/$file
+#for $file in $PATH
 #do
-grep -e \>\ -f "$@"
-echo "$@"
+grep ">" $file
+wc -l $file
+echo $file
 
 #done
 
