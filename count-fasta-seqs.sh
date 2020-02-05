@@ -63,6 +63,8 @@
 # files that were 'given to' this script. The variable "$@" will be very useful
 # for this. Let's take a look at what it gives us:
 
+#echo "$@"
+
 
 # How are you going to work with each file path?
 # HINT: for loop (remember "for do done"?)
@@ -92,6 +94,15 @@
 # Good luck!
 #
 # ADD YOUR CODE BELOW:
+#file=example-seqs*.fasta
+#PATH=/home/$USER/au-bootcamp-git-intro/$file
+#for $file in $PATH
+#do
+#grep ">" $file
+#wc -l $file
+#echo $file
+
+#done
 
 sum=0
 for name in "$@"
